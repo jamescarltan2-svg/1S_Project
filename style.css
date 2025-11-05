@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: black;
+}
+
+.header {
+    position: fixed;
+    display: flex;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    padding: 20px 3%;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+.logo img {
+    position: relative;
+    display: inline-flex;
+    top: 10px;
+    left: 40px;
+    height: 130px;
+    width: 200px;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 1.5rem;
+    font-family: Helvetica;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 0.2rem;
+    margin: 0 25px;
+}
+
+.navbar a::after{
+    content: '';
+    position: absolute;
+    left: -9px;
+    top: 0;
+    height: 110%;
+    width: 125%;
+    background-color: #eead2b;
+    background-position: center;
+    border-radius: 5px;
+    transform: scale(0);
+    opacity: 0;
+    transition: 0.3s;
+    z-index: -1;
+}
+.navbar a:hover::after,
+.navbar a:active{
+    color: #ffffff;
+    transform: scaleY(1.75) ;
+    opacity: 1;
+}
+
+.landing {
+    position: absolute;
+    width: 100%;
+    height: 90rem;
+    background-image: url("Resources/Images/Landing.png");
+    background-size:cover;
+    background-position: center;
+    top: -35rem;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+.Pose {
+    position: absolute;
+    top: 6rem;
+    left: 20%;
+    height: 43rem;
+}
+
+.Main p#p1 {
+    position: absolute;
+    display: flex;
+    top: 18.5rem;
+    left: 65rem;
+    z-index: 2;
+    color: #eaeaeb;
+    font-size: 2rem;
+    font-family: Helvetica;
+    font-weight: bold;
+}
+
+.Main p#p2 {
+    position: absolute;
+    display: flex;
+    top: 41.2rem;
+    left: 65rem;
+    z-index: 2;
+    color: #eaeaeb;
+    font-size: 2rem;
+    font-family: Helvetica;
+    font-weight: bold;
+}
+
+.Main h1 {
+    position: absolute;
+    display: flex;
+    top: 20rem;
+    left: 65rem;
+    z-index: 2;
+    color: #eead2b;
+    font-size: 6.5rem;
+    letter-spacing: 0.5px;
+    font-family: Georgia;
+}
+
+.seats {
+    position: absolute;
+    top: 25rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.skill {
+    position: relative;
+    top: 400rem;
+    width: 100%;
+    height: 80rem;
+    background-color: black;
+}
