@@ -188,7 +188,7 @@ body {
     position: relative;
     top: 8rem;
     left: 55rem;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     background-size: cover;
     height: 45rem;
     width: 60rem;
