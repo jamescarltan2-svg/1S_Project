@@ -1,35 +1,33 @@
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
-html, body {
-    background-color: grey;
+body {
+    background-color: rgb(0, 0, 0);
     margin: 0;
     overflow-x: hidden;
     scroll-behavior: smooth;
     padding: 0;
 }
 
-body {
-    overflow: hidden;
-}
-
-.page-section {
+/* .page-section {
     width: 100vw;
     height: 100vh;
     display:flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
 /* HEADER */
 
 .header {
     position: fixed;
     display: flex;
-    top: 10px;
+    top: 1.5%;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 7%;
     padding: 20px 3%;
     background-color: transparent;
@@ -37,22 +35,22 @@ body {
     align-items: center;
     justify-content: space-between;
     z-index: 100;
-    overflow: hidden;
+    overflow-wrap: normal;
 }
 
 .logo img {
     position: relative;
-    display: inline-flex;
+    display: flex;
     top: 10%;
     left: 3%;
-    height: 8rem;
-    width: 12rem;
+    height:6rem;
+    width: 10rem;
 }
 
 .navbar a {
     position: relative;
     display: flex;
-    font-size: 150%;
+    font-size: 130%;
     font-family: Helvetica;
     color: white;
     text-decoration: none;
@@ -87,84 +85,105 @@ body {
 .Main {
     position: relative;
     background-color: black;
-    width: 100%;
-    height: 80vh;
+    width: 100vw;
+    height: 100vh;
     z-index: -3;
 }
 
 .BG {
     background-color: black;
     position: relative;
-    top: -20%;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 90%;
 
 }
 
 .landing {
     position: relative;
     width: 100%;
-    height: 94rem;
-    top: -30%;
+    height: 100%;
+    top: 0;
     left: 0;
     opacity: 1;
 }
 
+.Mainsub {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+    height: 80%;
+    width: 80%;
+    top: 10%;
+    right: 5%;
+}
+
 .Pose {
     position: absolute;
-    top: 6rem;
-    left: 20%;
-    height: 43rem;
+    height: 95%;
+    width: 50%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    min-width: 400px;
 }
 
-.Main p#p1 {
-    position: absolute;
+.tagline {
+    position: relative;
     display: flex;
-    top: 18.3rem;
-    left: 65%;
+    flex-direction: column;
+    top: 25%;
+    left: 45%;
     z-index: 2;
+    height: 55%;
+    width: 60%;
+    justify-content: center;
+}
+
+.tagline p#p1 {
     color: #eaeaeb;
-    font-size: 2rem;
+    font-size: clamp(0.2rem, 1.7vw, 2.3rem);
     font-family: Helvetica;
     font-weight: bold;
 }
 
-.Main p#p2 {
-    position: absolute;
-    display: flex;
-    top: 41.2rem;
-    left: 65rem;
-    z-index: 2;
+.tagline p#p2 {
     color: #eaeaeb;
-    font-size: 2rem;
+    font-size: clamp(0.2rem, 1.7vw, 2.3rem);
     font-family: Helvetica;
     font-weight: bold;
 }
 
-.Main h1#headline {
-    position: absolute;
-    display: flex;
-    top: 20rem;
-    left: 65rem;
+.tagline h1#headline {
     z-index: 2;
     color: #eead2b;
-    font-size: 6.5rem;
-    letter-spacing: 0.5px;
+    font-size: clamp(1rem, 5vw, 7rem);
+    font-weight: bold;
+    letter-spacing: 0.5%;
     font-family: Georgia;
 }
 
 /* SKILL */
 
 
+.Mainsub1 {
+    position: relative;
+    display: flex;
+    top: 10%;
+    height: 50%;
+    width: 60%;
+}
+
 .skill h1#name {
     position: absolute;
     display: flex;
-    top: 20rem;
-    left: 15rem;
+    /* top: 20rem;
+    left: 15rem; */
     z-index: 2;
     color: #eead2b;
-    font-size: 7rem;
+    font-size: clamp(1rem, 6vw, 6rem);
     letter-spacing: 0.5px;
     font-family: Georgia;
 }
@@ -172,34 +191,36 @@ body {
 .skill p#p3 {
     position: absolute;
     display: flex;
-    top: 27.3rem;
+    top: 26.2rem;
     left: 15rem;
     z-index: 2;
     color: #eaeaeb;
-    font-size: 2rem;
+    font-size: clamp(1rem, 3vw, 2rem);
     font-family: Helvetica;
     font-weight: bold;
 }
 .seats {
     position: absolute;
-    top: 25rem;
+    top: 50%;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
 }
 
 .skill {
     position: relative;
-    top: 70rem;
+    top: 15%;
     width: 100%;
     height: 80rem;
-    background-image: linear-gradient(to top, rgb(66, 7, 7), rgb(7, 0, 0));
+    background-image: linear-gradient(to top, rgb(53, 5, 5) 1%, rgb(7, 0, 0) 40%);
 }
 
 .skill .card {
     position: absolute;
     top: 27.5rem;
     left: 12rem;
+    background-color: transparent;
     background-image: url(Resources/Images/Placard.png);
     background-size: cover;
     height: 25rem;
