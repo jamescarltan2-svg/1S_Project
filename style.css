@@ -84,6 +84,7 @@ body {
 
 .Main {
     position: relative;
+    display: flex;
     background-color: black;
     width: 100vw;
     height: 100vh;
@@ -165,93 +166,106 @@ body {
     font-family: Georgia;
 }
 
-/* SKILL */
-
-
-.Mainsub1 {
-    position: relative;
-    display: flex;
-    top: 10%;
-    height: 50%;
-    width: 60%;
-}
-
-.skill h1#name {
-    position: absolute;
-    display: flex;
-    /* top: 20rem;
-    left: 15rem; */
-    z-index: 2;
-    color: #eead2b;
-    font-size: clamp(1rem, 6vw, 6rem);
-    letter-spacing: 0.5px;
-    font-family: Georgia;
-}
-
-.skill p#p3 {
-    position: absolute;
-    display: flex;
-    top: 26.2rem;
-    left: 15rem;
-    z-index: 2;
-    color: #eaeaeb;
-    font-size: clamp(1rem, 3vw, 2rem);
-    font-family: Helvetica;
-    font-weight: bold;
-}
 .seats {
     position: absolute;
     top: 50%;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     z-index: 2;
 }
+
+/* SKILL */
 
 .skill {
     position: relative;
+    display: flex;
+    padding: 5%;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
     top: 15%;
-    width: 100%;
-    height: 80rem;
+    width: 100vw;
+    height: 100vh;
     background-image: linear-gradient(to top, rgb(53, 5, 5) 1%, rgb(7, 0, 0) 40%);
 }
 
-.skill .card {
-    position: absolute;
-    top: 27.5rem;
-    left: 12rem;
+.Mainsub1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 10%;
+    height: 70%;
+    width: 32%;
+    justify-content: center;
+    gap: 2%;
+}
+
+.Mainsub1 h1#name {
+    position: relative;
+    z-index: 2;
+    left: 0.6em;
+    color: #eead2b;
+    font-size: clamp(2rem, 4vw, 5em);
+    letter-spacing: 0.5px;
+    font-family: Georgia;
+}
+
+.Mainsub1 p#p3 {
+    position: relative;
+    display: flex;
+    top: -3%;
+    left: 2em;
+    z-index: 2;
+    color: #eaeaeb;
+    font-size: clamp(1rem, 1vw, 2em);
+    font-family: Helvetica;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+
+.Mainsub1 .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     background-color: transparent;
     background-image: url(Resources/Images/Placard.png);
-    background-size: cover;
-    height: 25rem;
-    width: 35rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: flex-start;
+    height: 60%;
+    width: 100%;
     z-index: 2;
+    bottom: 7%;
+    justify-content: center;
 }
 
 .skill .card p {
     position: relative;
-    top: 5rem;
-    left: 6rem;
-    font-size: 2rem;
+    /* top: 20%; */
+    left: 15%;
+    font-size: clamp(1rem, 2vw, 3em);
     letter-spacing: 0.2rem;
 }
 
 .skill .card ul {
     position: relative;
-    top: 5.5rem;
-    left: 9rem;
-    font-size: 2rem;
-    letter-spacing: 0.2rem;
+    /* top: 19%; */
+    left: 25%;
+    font-size: clamp(1rem, 1.2vw, 2em);
+    /* letter-spacing: 0.1rem;
+    word-spacing: 0.1rem; */
 }
 
 .skill .deck {
     position: relative;
-    top: 8rem;
-    left: 55rem;
+    top: 10%;
     background-color: rgb(0, 0, 0);
     background-size: cover;
-    height: 45rem;
-    width: 60rem;
+    height: 80%;
+    width: 50%;
     z-index: 2;
     opacity: 0.6;
 }
