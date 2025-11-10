@@ -324,3 +324,92 @@ body {
     font-size: 1.5em;
     font-weight: bold;
  }
+
+ /* Socials */
+ .socials {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, rgb(53, 5, 5) 1%, rgb(7, 0, 0) 40%);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+ }
+
+.socials .Mainsub2 {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+    width: 80%;
+    background-color: transparent;
+    justify-content: space-evenly;
+    gap: 10%;
+    align-items: center;
+}
+
+
+ .socials .Mainsub2 .cat {
+    position: relative;
+    background-color: transparent;
+    height: 50%;
+    width: 50%;
+ }
+
+ .cat img {
+    position: relative;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+ }
+
+.socials .Mainsub2 .acc {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    height: 50%;
+    width: 15%;
+    gap: 5%;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.socials .Mainsub2 .acc img{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+}
+
+/* .fb {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 150%;
+    flex-direction: row;
+} */
+
+.socials .Mainsub2 .social_name {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    height: 50%;
+    width: 25%;
+    justify-content: space-evenly;
+    top: 4.5%;
+}
+
+.social_name p {
+    background-color: transparent;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-size: clamp(1rem, 5vw, 4em);
+    color: white;
+}
