@@ -4,6 +4,11 @@
     margin: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
 body {
     background-color: rgb(0, 0, 0);
     margin: 0;
@@ -25,7 +30,7 @@ body {
 .header {
     position: fixed;
     display: flex;
-    top: 1.5%;
+    top: 0;
     left: 0;
     width: 100vw;
     height: 7%;
@@ -36,6 +41,17 @@ body {
     justify-content: space-between;
     z-index: 100;
     overflow-wrap: normal;
+}
+
+.divbg {
+    position: absolute;
+    background-color: black;
+    top: 5%;
+    right: 0.5%;
+    height: 100%;
+    width: 100%;
+    z-index: -4;
+    opacity: 0.4;
 }
 
 .logo img {
@@ -95,6 +111,7 @@ body {
     width: 100vw;
     height: 100vh;
     z-index: -3;
+    scroll-snap-align: center;
 }
 
 .BG {
@@ -174,10 +191,10 @@ body {
 
 .seats {
     position: absolute;
-    top: 50%;
+    top: 64%;
     left: 0;
     width: 100vw;
-    height: 90vh;
+    height: 60vh;
     z-index: 2;
 }
 
@@ -194,13 +211,30 @@ body {
     width: 100vw;
     height: 100vh;
     background-image: linear-gradient(to top, rgb(53, 5, 5) 1%, rgb(7, 0, 0) 40%);
+    scroll-snap-align: center;
+}
+
+.props2 {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+}
+
+.props2 img {
+    position: relative;
+    height: 50%;
+    width: 50%;
+    bottom: 5%;
+    opacity: 0.7;
 }
 
 .Mainsub1 {
     position: relative;
     display: flex;
     flex-direction: column;
-    top: 10%;
+    top: 5%;
     height: 70%;
     width: 32%;
     justify-content: center;
@@ -241,35 +275,35 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     align-items: flex-start;
+    justify-content: center;
     height: 60%;
     width: 100%;
     z-index: 2;
     bottom: 4%;
     justify-content: center;
+    gap: 5%;
+    padding: 5%;
 }
 
 .skill .card p {
     position: relative;
-    /* top: 20%; */
     left: 15%;
     font-size: clamp(1rem, 2vw, 3em);
     letter-spacing: 0.2rem;
+    color: black;
 }
 
 .skill .card ul {
     position: relative;
-    /* top: 19%; */
     left: 25%;
     font-size: clamp(1rem, 1.2vw, 2em);
-    /* letter-spacing: 0.1rem;
-    word-spacing: 0.1rem; */
 }
 
 /* DECK */
 
 .skill .deck {
     position: relative;
-    top: 5%;
+    top: 7%;
     height: 80vh;
     width: 50%;
     z-index: 2;
@@ -282,13 +316,12 @@ body {
     justify-content: center;
     width: 30%;
     height: 50%;
-    top: 25%;
+    top: 20%;
     left: 40%;
     left: calc(50% -100px);
     transform-style: preserve-3d;
     transform: perspective(1000px);
-    animation: autoRun 20s linear infinite;
-    /* transform: rotateY(0deg); */
+    animation: autoRun 25s linear infinite;
  }
 
 @keyframes autoRun {
@@ -303,7 +336,6 @@ body {
  .deck .slider .item {
     position:absolute;
     inset: 0 0 0 0;
-    /* transform-origin: 0 0 0; */
     transform: 
         rotateY(calc((var(--position) - 1) * (360/var(--quantity)) *1deg))
         translateZ(250px);
@@ -313,9 +345,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* display: block;
-    margin: auto;
-    border-radius: 10px; */
+    border-radius: 10px;
  }
 
  .item {
@@ -324,6 +354,31 @@ body {
     font-size: 1.5em;
     font-weight: bold;
  }
+
+ .peri {
+    position: relative;
+    height: 20vh;
+    width: 100vw;
+    bottom: 10%;
+    right: 10%;
+    z-index: 2;
+ }
+
+ .ring {
+    position: relative;
+    height: 100%;
+    width: 40%;
+    left: 62%;
+    bottom: 40%;
+    animation: glowing 3s infinite;
+    animation-timing-function: ease-in-out;
+ }
+
+@keyframes glowing {
+    0% {opacity: 0.5;}
+    50% {opacity: 1;}
+    100% {opacity: 0.5;}
+}
 
  /* Socials */
  .socials {
@@ -336,6 +391,7 @@ body {
     overflow: hidden;
     justify-content: center;
     align-items: center;
+    scroll-snap-align: center;
  }
 
 .socials .Mainsub2 {
@@ -356,7 +412,20 @@ body {
     background-color: transparent;
     height: 50%;
     width: 50%;
- }
+    animation: fadeIn 4s infinite, floatUp 4s infinite;
+    animation-timing-function: ease-in-out;
+    z-index: 2;
+}
+@keyframes fadeIn {
+    50% { opacity: 0.5;}
+    100% { opacity: 1; }
+    200% { opacity: 0.5; }
+}
+
+@keyframes floatUp {
+    0%, 100% { transform: translateY(-20); }
+    50% { transform: translateY(40px); }
+}
 
  .cat img {
     position: relative;
@@ -386,14 +455,6 @@ body {
     width: 100%;
 }
 
-/* .fb {
-    position: relative;
-    display: flex;
-    height: 100%;
-    width: 150%;
-    flex-direction: row;
-} */
-
 .socials .Mainsub2 .social_name {
     position: relative;
     display: flex;
@@ -402,14 +463,63 @@ body {
     height: 50%;
     width: 25%;
     justify-content: space-evenly;
-    top: 4.5%;
+    top: 3%;
+    gap: 25%;
+    right: 10%;
 }
 
-.social_name p {
+.social_name a,p {
     background-color: transparent;
     position: relative;
     display: flex;
     flex-direction: column;
-    font-size: clamp(1rem, 5vw, 4em);
+    font-size: clamp(1rem, 3vw, 5em);
     color: white;
+    justify-content: space-evenly;
+    text-decoration: none;
 }
+
+.props{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+    width: 100vw;
+    gap: 2%;
+    left: 2%;
+    top: 12%;
+}
+
+#left {
+    position: relative;
+    top: 0;
+    left: 3%;
+    height: 80%;
+    width: 20%;
+    animation-delay: 2s;
+    animation: floatUp2 3s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floatUp2 {
+    0%, 100% { transform: translateY(-20); }
+    50% { transform: translateY(10px); }
+}
+
+#right {
+    position: relative;
+    top: 0;
+    left: 5%;
+    height: 80%;
+    width: 20%;
+    z-index: 1;
+    animation-delay: 2s;
+    animation: floatUp3 3s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floatUp3 {
+    0%, 100% { transform: translateY(30); }
+    50% { transform: translateY(-40px); }
+}
+
