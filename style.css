@@ -121,7 +121,6 @@ body {
     left: 0;
     width: 100%;
     height: 90%;
-
 }
 
 .landing {
@@ -130,7 +129,7 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    opacity: 1;
+    opacity: 0.4;
 }
 
 .Mainsub {
@@ -196,6 +195,7 @@ body {
     width: 100vw;
     height: 60vh;
     z-index: 2;
+    opacity: 1;
 }
 
 /* About Me */
@@ -215,53 +215,70 @@ body {
 .gear_container {
     position: absolute;
     display: flex;
-    height: 10%;
-    width: 70vw;
+    height: 10.3%;
+    width: 45vw;
     top: 25%;
-    left: 0;
+    left: 5%;
     z-index: 2;
     align-items: center;
+    background-image: url(Resources/Images/banner.jpg);
+    background-position: center;
+    border-radius: 150px;
+    justify-content: center;
+    box-shadow: 0px 0px 50px rgb(94, 67, 67);    
 }
 
 #gear_text {
     position: relative;
     height: 70%;
     width: 80%;
-    left: 15%;
-    color: white;
+    color: #eead2b;
     font-size: clamp(2rem, 3vw, 5em);
+    text-shadow: 0.5rem 0.5rem 15px rgb(0,0,0.5);
 }
 
-#gear {
-    position: absolute;
-    height: 60%;
-    width: 20%;
-    right: 85%;
+.gear_container p {
+    text-shadow: 20px, 20px;
 }
 
-#gear1 {
+.mask {
     position: absolute;
-    height: 25%;
-    width: 10%;
-    right: 75%;
-    z-index: 100;
+    right: 5%;
+    display: flex;
+    height: 80%;
+    width: 50%;
 }
 
-#gear2 {
-    position: absolute;
-    height: 7.5%;
-    width: 5%;
-    right: 75%;
-    z-index: 100;
+#smile {
+    position: relative;
+    height: 50%;
+    width: 40%;
+    top: 10%;
+    left: 10%;
+    animation: float1 4s infinite;
+    animation-timing-function: ease-in-out;
 }
 
-#gear3 {
-    position: absolute;
-    height: 7.5%;
-    width: 5%;
-    right: 70%;
-    z-index: 100;
+#frown {
+    position: relative;
+    height: 50%;
+    width: 40%;
+    top: 50%;
+    left: 25%;
+    animation: float2 3s infinite;
+    animation-timing-function: ease-in-out;
 }
+
+@keyframes float1 {
+    0%, 100% {transform: translateY(-10px);}
+    50% {transform: translateY(40px);}
+}
+
+@keyframes float2 {
+    0%, 100% {transform: translateY(30px);}
+    50% {transform: translateY(-20px);}
+}
+
 
 
 .MainContainer {
@@ -278,11 +295,25 @@ body {
 
 .text_content {
     position: relative;
+    display: flex;
+    flex-direction: column;
     height: 50%;
-    width: 40%;
-    background-color: white;
+    width: 47%;
     z-index: 1;
     left: 2%;
+    color: white;
+    justify-content: start;
+    gap: 5%;
+}
+
+.text_content h1 {
+    position: relative;
+    font-size: clamp(2rem, 2vw, 2.5rem);
+}
+
+.text_content p {
+    position: relative;
+    font-size: clamp(0.5rem, 1vw, 1.5rem);
 }
 
 .profile_picture {
@@ -303,13 +334,6 @@ body {
 
 }
 
-#quill {
-    position: absolute;
-    height: 85%;
-    width: 95%;
-    z-index: 2;
-}
-
 /* SKILL */
 
 .skill {
@@ -322,7 +346,7 @@ body {
     top: 15%;
     width: 100vw;
     height: 100vh;
-    background-image: linear-gradient(to top, rgb(53, 5, 5) 1%, rgb(7, 0, 0) 40%);
+    background-image: linear-gradient(to bottom, rgb(53, 5, 5) 1%, rgb(7, 0, 0) 40%);
     scroll-snap-align: center;
 }
 
@@ -332,15 +356,55 @@ body {
     flex-direction: row;
     height: 100vh;
     width: 100vw;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-.props2 img {
-    position: relative;
+.props2 .bulb1 {
+    position: absolute;
     height: 50%;
-    width: 50%;
-    bottom: 5%;
-    opacity: 0.7;
+    width: 27%;
+    top: 0%;
+    opacity: 0.5;
+    right: 80%;
 }
+
+.props2 .bulb2 {
+    position: absolute;
+    height: 60%;
+    width: 40%;
+    bottom: 60%;
+    opacity: 1;
+    left: 10%;
+}
+
+.props2 .bulb3 {
+    position: absolute;
+    height: 30%;
+    width: 25%;
+    bottom: 80%;
+    left: 40%;
+    opacity: 0.4;
+}
+
+.props2 .bulb4 {
+    position: absolute;
+    height: 60%;
+    width: 35%;
+    bottom: 65%;
+    left: 55%;
+    opacity: 1;
+}
+
+.props2 .bulb5 {
+    position: absolute;
+    height: 20%;
+    width: 8%;
+    bottom: 75%;
+    left: 90%;
+    opacity: 0.5;
+}
+
 
 .Mainsub1 {
     position: relative;
@@ -482,22 +546,26 @@ body {
     width: 40%;
     left: 62%;
     bottom: 40%;
-    animation: glowing 3s infinite;
+    animation: glowing 5s infinite;
     animation-timing-function: ease-in-out;
  }
 
 @keyframes glowing {
-    0% {opacity: 0.5;}
-    50% {opacity: 1;}
-    100% {opacity: 0.5;}
+    0%,100% {
+        filter: drop-shadow(0 0 5px #eead2b);
+    }
+    50% {
+        filter: drop-shadow(0 0 45px #eead2b)
+    }
 }
+
 
  /* Socials */
  .socials {
     position: relative;
     display: flex;
     flex-direction: column;
-    background-image: linear-gradient(to bottom, rgb(53, 5, 5) 1%, rgb(7, 0, 0) 40%);
+    background-image: linear-gradient(to top, rgb(53, 5, 5) 1%, rgb(7, 0, 0) 40%);
     height: 100vh;
     width: 100vw;
     overflow: hidden;
