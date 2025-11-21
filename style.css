@@ -6,7 +6,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
+    /* scroll-snap-type: y mandatory; */
 }
 
 body {
@@ -96,7 +96,7 @@ body {
     z-index: -1;
 }
 .navbar a:hover::after,
-.navbar a:active{
+.navbar a.active{
     color: #ffffff;
     transform: scaleY(1.75) ;
     opacity: 1;
@@ -111,8 +111,47 @@ body {
     width: 100vw;
     height: 100vh;
     z-index: -3;
-    scroll-snap-align: center;
+    /* scroll-snap-align: center; */
 }
+
+.autoShow {
+    animation: text-appear both;
+    animation-timeline: view();
+    animation-range: entry 45% cover 100vh;
+}
+
+@keyframes text-appear {
+    from {
+        opacity: 0;
+        transform: scale(0.25);
+        transform: translateY(200px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+        transform: translateY(0);
+    }
+}
+
+.autoHide {
+    animation: text-disappear both;
+    animation-timeline: view();
+    animation-range: exit 0% 100%;
+}
+
+@keyframes text-disappear {
+    from {
+        opacity: 1;
+        transform: scale(1);
+        transform: translateY(0px);
+    }
+    to {
+        opacity: 0.5;
+        transform: scale(0.25);
+        transform: translateY(300px);
+    }
+}
+
 
 .BG {
     background-color: black;
@@ -129,7 +168,7 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    opacity: 0.4;
+    opacity: 0.4 !important;
 }
 
 .Mainsub {
@@ -208,7 +247,7 @@ body {
     height: 100vh;
     width: 100vw;
     background-image: linear-gradient(to top, rgb(53, 5, 5) 1%, rgb(7, 0, 0) 40%);
-    scroll-snap-align: center;
+    /* scroll-snap-align: center; */
     flex-direction: column;
 }
 
@@ -347,7 +386,7 @@ body {
     width: 100vw;
     height: 100vh;
     background-image: linear-gradient(to bottom, rgb(53, 5, 5) 1%, rgb(7, 0, 0) 40%);
-    scroll-snap-align: center;
+    /* scroll-snap-align: center; */
 }
 
 .props2 {
@@ -485,7 +524,6 @@ body {
     z-index: 2;
     text-align: center;
     overflow: hidden;
-    /* perspective: 10000px; */
 }
  .deck .slider {
     position: absolute;
@@ -571,7 +609,7 @@ body {
     overflow: hidden;
     justify-content: center;
     align-items: center;
-    scroll-snap-align: center;
+    /* scroll-snap-align: center; */
  }
 
 .socials .Mainsub2 {
