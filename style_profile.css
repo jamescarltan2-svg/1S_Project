@@ -1,0 +1,382 @@
+@font-face {
+    font-family: "Maragsa";
+    src: url(Resources/Fonts/maragsa-font/MaragsaDisplay-GO6PD.otf);
+}
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+    margin: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 0;
+}
+
+/* HEADER */
+
+.header {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 7%;
+    padding: 20px 3%;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    overflow-wrap: normal;
+}
+
+.divbg {
+    position: absolute;
+    background-color: black;
+    top: 5%;
+    right: 0.5%;
+    height: 100%;
+    width: 100%;
+    z-index: -4;
+    opacity: 0.4;
+}
+
+.logo img {
+    position: relative;
+    display: flex;
+    top: 10%;
+    left: 3%;
+    height:6rem;
+    width: 10rem;
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar a {
+    position: relative;
+    display: flex;
+    font-size: 120%;
+    font-family: Helvetica;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 0.1rem;
+    margin: 0 25px;
+}
+
+.navbar a::after{
+    content: '';
+    position: absolute;
+    left: -9px;
+    top: 0;
+    height: 110%;
+    width: 125%;
+    background-color: #5b0c15;
+    background-position: center;
+    border-radius: 5px;
+    transform: scale(0);
+    opacity: 0;
+    transition: 0.3s;
+    z-index: -1;
+}
+.navbar a:hover::after,
+.navbar a.active{
+    color: #ffffff;
+    transform: scaleY(1.75) ;
+    opacity: 1;
+}
+
+/* Aside */
+
+.s_head {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 30%;
+    left: 1%;
+    width: 4vw;
+    height: 30vh;
+    background-color: rgba(31, 31, 31, 0.336);
+    justify-content: space-evenly;
+    align-items:center;
+    z-index: 100;
+    border-radius: 150px;
+}
+
+.nav_side {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 4vw;
+    height: 30vh;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.icon {
+    position: relative;
+    top: 30%;
+    height: 50%;
+    width: 90%;
+}
+
+/* Section Animation */
+
+.autoShow {
+    animation: text-appear both;
+    animation-timeline: view();
+    animation-range: entry 45% cover 100vh;
+}
+
+@keyframes text-appear {
+    from {
+        opacity: 0;
+        transform: scale(0.25);
+        transform: translateY(200px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+        transform: translateY(0);
+    }
+}
+
+.autoHide {
+    transition: ease-in-out;
+    animation: text-disappear both;
+    animation-timeline: view();
+    animation-range: exit 0% 100%;
+}
+
+@keyframes text-disappear {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0.5;
+        transform: scale(0.25);
+    }
+}
+
+
+
+/* Profile */
+
+.Profile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg_profile {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    color: rgb(46, 10, 10);
+    opacity: 0.8;
+    z-index: -2;
+}
+
+.bg_profile img {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    z-index: -5;
+}
+
+.p_container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    width: 60vw;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.p_container h1 {
+    color: #eead2b;
+    font-size: clamp(3rem, 6vw, 8rem);
+    font-family: "Maragsa";
+    font-weight: 600;
+    letter-spacing: 5%;
+    word-spacing: 10%;
+    text-shadow: 0.5rem 0.5rem 15px rgb(102, 8, 8);
+}
+
+.p_container h2 {
+    color: white;
+    font-size: clamp(2rem, 2.5vw, 3rem);
+    font-family: "Maragsa";
+    font-weight: 100;
+}
+
+.main_bio {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    height: 20%;
+    width: 80%;
+    bottom: 5%;
+    z-index: 1;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.mini_bio_cover {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(128, 128, 128);
+    opacity: 0.1;
+    border-radius: 50px;
+}
+
+.mini_bio {
+    position: relative;
+    display: flex;
+    height: 90%;
+    width: 30%;
+    border-radius: 50px;
+    z-index: 2;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.mini_bio::before {
+    content: '';
+    height: -100%;
+    width: 300%;
+    background: linear-gradient(0deg, transparent, transparent 30%, rgba(102, 8, 8, 0.4));
+    transform: rotate(-45deg);
+    transition: all 2s ease-in-out;
+    opacity: 0;
+    z-index: 2;
+}
+
+.mini_bio:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(192, 17, 17, 0.4);
+    z-index: 2;
+    transition: all 0.85s ease-in-out;
+    opacity: 1;
+}
+
+.mini_bio:hover::before {
+    opacity: 1;
+    transform: rotate(-45deg) translateY(100%);
+    z-index: 2;
+}
+
+.b_text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 5%;
+    color: rgba(255, 255, 255, 0.829);
+    font-family: "Maragsa";
+    font-size: clamp(0.5rem, 1vw, 1.5rem);
+    justify-content: space-between;
+    z-index: 1;
+    opacity: 0.9;
+    font-weight: lighter;
+}
+
+#bio1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#fave {
+    color: #eead2b;
+}
+
+#quote {
+    color: #eead2b;
+    position: relative;
+    left: 20%;
+}
+
+#bio2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#bio2 h1 {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+}
+
+#SY {
+    position: relative;
+    justify-content: start;
+    color: #eead2b;
+}
+
+#bio3 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#School {
+    position: relative;
+    justify-content: start;
+    color: #eead2b;
+}
+
+#bio3 h1 {
+    position: absolute;
+    top: 40%;
+    left: 13%;
+}
+
+/* Video */
+
+.Video {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Music */
+
+.Music {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Photography */
+
+.Photography {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
